@@ -1,0 +1,38 @@
+1. Pallindrome Integer..
+
+Problem Statement
+Given an integer x , return true if x is palindrome integer.
+An integer is a palindrome when it reads the same backward as forward.
+For example, 121 is a palindrome while 123 is not.
+
+____________________________________________________________________________________________________________________________________________________________________________________________
+
+Ans.
+
+#include<iostream>
+using namespace std;
+class Solution {
+public:
+	bool isPalindrome(int n) {
+		if(n<0) {
+			return false;
+		}
+		long newnumber=0;
+		long flag=n;
+		do {
+			newnumber=newnumber*10+(n%10);
+			n/=10;
+		} while(n!=0);
+		if(flag==newnumber)return true;
+		return false;
+
+	}
+};
+int main() {
+	Solution s;
+	int n;
+	cin>>n;
+	if(s.isPalindrome(n))cout<<"true";
+	else cout<<"false";
+	return 0;
+}
